@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Button Effect Revision</title>
+		<style type="text/css">
+
+			body{
+				font-family:"Source Code Pro";
+				background-color: royalblue;
+				height: 100vh;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				margin: 0;
+				overflow: hidden;
+			}
+
+			a{
+				text-decoration: none;
+				/*background-color: darkslateblue;*/
+				color: #f4f4f4;
+				font-size: 28px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 7px;
+				padding: 25px 50px;
+
+				position: relative;
+			}
+
+			a::before{
+				content: "";
+
+				width: 50%;
+				height: 100%;
+				background-color: aqua;
+
+				position: absolute;
+				top: -5px;
+				left: 0.5%;
+
+				transform: skew(-15deg);
+
+				z-index:-1;
+
+				transition: all 0.5s;
+			}
+
+			a::after{
+				content: "";
+
+				width: 50%;
+				height: 100%;
+				background-color: darkslateblue;
+
+				position:absolute;
+				top: 5px;
+				left: 49.5%;
+
+				transform: skew(-15deg);
+
+				z-index: -1;
+
+				transition: all 0.5s;
+			}
+
+			/*a span::before*/
+			a span::after{
+				content: "";
+
+				width:50%;
+				height:100%;
+				background-color: cyan;
+
+
+				position: absolute;
+				top:0;
+				left:100%;
+
+				z-index: -1;
+
+				transition: all 0.3s;
+				
+
+				opacity: 0;
+			}
+
+			span::before{
+				content: "";
+
+				width: 50%;
+				height: 100%;
+				background-color: darkslateblue;
+
+				position: absolute;
+				top:0;
+				left: -50%;
+
+				z-index: -1;
+
+				transition: all 0.3s;
+
+				opacity: 0;
+			}
+
+			a:hover span::before{
+				left: 1%;
+				transform: skew(15deg) translate(-5px);
+				transition-delay: 0.5s;
+
+				opacity: 1;
+			}
+
+			a:hover span::after{
+				left: 49%;
+				transform: skew(15deg) translateY(5px);
+				transition-delay: 0.5s;
+
+				opacity: 1;
+			}
+
+			a:hover::before{
+				left: 0;
+				transform: skew(0deg) translateY(150%);
+
+				opacity: 0;
+			}
+
+			a:hover::after{
+				left: 50%;
+				transform: skew(0deg) translateY(-150%);
+
+				opacity: 0;
+			}
+
+		</style>
+	</head>
+	<body>
+		<a href="#"><span></span>Hover Me</a>
+	</body>
+</html>

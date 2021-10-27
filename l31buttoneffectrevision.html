@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Button Effect Revision</title>
+		<style type="text/css">
+
+			body{
+				font-family: sans-serif;
+				background-color: #222;
+				height: 100vh;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				margin: 0;
+				overflow: hidden;
+			}
+
+			a{
+				text-decoration: none;
+				background-color: darkslateblue;
+				color: #fff;
+				font-size: 25px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 7px;
+				padding: 20px 40px;
+
+				border-radius: 100px;
+
+				position: relative;
+
+				transition: all 0.5s;
+			}
+
+			a::before{
+				content: "";
+
+				width: 100%;
+				height: 100%;
+				background-color: #fff;
+
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				border-radius: 100px;
+
+				z-index: -1;
+
+				transition: all 0.2s;
+
+				transform: scale(3);
+
+				opacity:0;
+			}
+
+			a:hover{
+				padding: 25px 50px;
+				box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+			}
+
+			a:active{
+				transform: scale(0.98) translateY(10%);
+				box-shadow: 0 5px 10px rgba(255,255,255,0.1);
+			}
+
+			a:active::before{
+				transform: scale(0);
+				opacity: 1;
+			}
+
+		</style>
+	</head>
+	<body>
+		<a href="#">Hover Me</a>
+	</body>
+</html>

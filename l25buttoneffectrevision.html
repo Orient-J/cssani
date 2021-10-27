@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Button Effect Revision</title>
+		<style type="text/css">
+
+			body{
+				font-family:"Comic Sans MS", cursive;
+				background-color:#222;
+				height:100vh;
+
+				display:flex;
+				justify-content:center;
+				align-items:center;
+
+				margin:0;
+				overflow:hidden;
+			}
+
+			a{
+				text-decoration:none;
+				color:aqua;
+				border:3px solid aqua;
+				padding:80px;
+				text-transform:uppercase;
+				letter-spacing:2px;
+
+				position:relative;
+
+				overflow:hidden;
+			}
+
+			a::before,a::after,
+			span::before,span::after{
+				content:"";
+
+				width:50%;
+				height:50%;
+				background-color:darkslateblue;
+
+				position:absolute;
+
+				transition:all 0.2s ease-in;
+
+				z-index:-1;
+			}
+
+			a::before{
+				top:-50%;
+				right:0;
+			}
+
+			a::after{
+
+				bottom:0;
+				right:-50%;
+
+				transition-delay:0.1s;
+			}
+
+			span::before{
+	
+				bottom:-50%;
+				left:0;
+
+				transition-delay:0.2s;
+			}
+
+			span::after{
+			
+				top:0;
+				left:-50%;
+
+				transition-delay:0.3s;
+			}
+
+			a:hover::before{
+				top:50%;
+				right:0;
+			}
+
+			a:hover::after{
+				bottom:0;
+				right:50%;
+			}
+
+			a:hover span::before{
+				bottom:50%;
+				left:0;
+			}
+
+			a:hover span::after{
+				top:0;
+				left:50%;
+			}
+
+		</style>
+	</head>
+	<body>
+		<a href="#"><span></span>Hover Me</a>
+	</body>
+</html>
